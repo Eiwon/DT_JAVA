@@ -37,7 +37,8 @@ public class TypeCastingMain {
 		System.out.println("ch1 = " + (int)ch1); //아스키 코드값 출력
 		
 		//ch1 사용하여 'B' 출력
-		System.out.println("ch1 = " + (char)((int)ch1 +1));
+		char ch2 = (char)(ch1 +1);
+		System.out.println("ch2 = " + (char)((int)ch1 +1));
 		
 		
 	}
