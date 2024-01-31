@@ -8,7 +8,6 @@ public class ScannerMain01 {
 
 		//입력을 받기 위한 Scanner 선언
 		Scanner sc = new Scanner(System.in);
-		int test = sc.nextInt();
 		
 		// test
 //		System.out.println("국어 점수 입력 : ");
