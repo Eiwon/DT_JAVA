@@ -1,4 +1,4 @@
-package edu.java.While03;
+package edu.java.while03;
 
 // do - while
 // 무조건 한번은 실행
