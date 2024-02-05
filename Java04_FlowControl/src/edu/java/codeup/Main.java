@@ -7,16 +7,24 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		int dan = sc.nextInt();
+		int studentN = sc.nextInt();
+		int seatN = sc.nextInt();
+		int[] tall = new int[studentN];
 		
-		for(int i=1; i <= 9; i++) {
-			for(int j=0; j<dan*i; j++)
-				System.out.print("*");
-			System.out.println();
+		for(int i=0; i<studentN; i++) {
+			tall[i] = sc.nextInt();
 		}
 		
+		Arrays.sort(tall);
 		
-		// 1278 1281 1286 1287
+		for(int i = 0; i<studentN; i++) {
+			if(i%seatN == 0)
+				System.out.println();
+			System.out.print(tall[i] + " ");
+		}
+		System.out.println();
+		
+		//1093 1407 1409 1411 
 	} // end main
 
 } // end Main
