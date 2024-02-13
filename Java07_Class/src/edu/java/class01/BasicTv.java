@@ -9,7 +9,7 @@ public class BasicTv {
 
 	// ty가 가져야할 상태(속성, 성질) = > 멤버 변수(필드, 프로퍼티)
 	boolean powerOn; // tv의 전원 상태(true : on, false : off)
-	int channel = 1, volume;
+	int channel = 1, volume = 0;
 	
 	// Tv가 가져야 할 기능 => 메소드
 	// 전원 pewerOn on / off 가능
