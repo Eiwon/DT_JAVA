@@ -8,5 +8,5 @@ public interface Menu {
 	public static final int SELECT = 3; // 상세 검색
 	public static final int UPDATE = 4; // 수정
 	public static final int DELETE = 5; // 삭제
-	
+	public static final String VERSION = "연락처 관리 시스템 ver0.2";
 }

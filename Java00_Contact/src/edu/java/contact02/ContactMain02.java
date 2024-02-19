@@ -8,6 +8,7 @@ public class ContactMain02 {
 	public static ContactDAO dao;
 	
 	public static void main(String[] args) {
+		System.out.println(Menu.VERSION);
 		
 		int select = 0;
 		boolean run = true;
@@ -78,7 +79,7 @@ public class ContactMain02 {
 			System.out.println("이메일 입력 > ");
 			String email = sc.next();
 			
-			int result = dao.update(index, new ContactDTO(name, phone, email));
+			int result = dao.update(index, new ContactVO(name, phone, email));
 			if(result == 1) {
 				System.out.println("연락처 수정 완료!");
 			}
@@ -94,7 +95,7 @@ public class ContactMain02 {
 		int count = dao.getContactNum();
 		
 		if(index < count && index >= 0) {
-			ContactDTO contact = dao.selectByIndex(index);
+			ContactVO contact = dao.selectByIndex(index);
 			System.out.println(contact.toString());
 		}else {
 			System.err.println("존재하지 않는 인덱스 입니다.");
@@ -103,7 +104,7 @@ public class ContactMain02 {
 
 
 	private static void selectAll() {
-		ContactDTO[] list = dao.selectAll();
+		ContactVO[] list = dao.selectAll();
 		int count = dao.getContactNum();
 		
 		System.out.println("연락처 개수 : " + count);
@@ -127,10 +128,12 @@ public class ContactMain02 {
 		System.out.println("이메일 입력 > ");
 		email = sc.next();
 		
-		dao.insert(new ContactDTO(name, phone, email));
-		int count = dao.getContactNum();
-		System.out.println("등록된 연락처 개수 : " + count);
-		System.out.println("연락처 등록 완료!");
+		int result = dao.insert(new ContactVO(name, phone, email));
+		if(result == 1) {
+			int count = dao.getContactNum();
+			System.out.println("등록된 연락처 개수 : " + count);
+			System.out.println("연락처 등록 완료!");
+		}
 	} // end insertContact
 
 

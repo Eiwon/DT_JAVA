@@ -1,13 +1,13 @@
 package edu.java.contact02;
 
-public class ContactDTO {
+public class ContactVO {
 	private String name;
 	private String phone;
 	private String email;
 	
-	public ContactDTO() {}
+	public ContactVO() {}
 
-	public ContactDTO(String name, String phone, String email) {
+	public ContactVO(String name, String phone, String email) {
 		this.name = name;
 		this.phone = phone;
 		this.email = email;

@@ -4,7 +4,7 @@ public class ContactDAOImple implements ContactDAO {
 
 	private static ContactDAOImple instance = null;
 	private final int MAX = 100; // 연락처 최대치
-	private ContactDTO[] list = new ContactDTO[MAX];
+	private ContactVO[] list = new ContactVO[MAX];
 	private int count = 0;
 	
 
@@ -18,26 +18,26 @@ public class ContactDAOImple implements ContactDAO {
 	}
 
 	@Override
-	public int insert(ContactDTO contact) {
+	public int insert(ContactVO contact) {
 		System.out.println("log : insert()");
 		list[count++] = contact;
 		return 1;
 	}
 
 	@Override
-	public ContactDTO[] selectAll() {
+	public ContactVO[] selectAll() {
 		System.out.println("log : selectAll()");
 		return list;
 	}
 
 	@Override
-	public ContactDTO selectByIndex(int index) {
+	public ContactVO selectByIndex(int index) {
 		System.out.println("log : selectByIndex()");
 		return list[index];
 	}
 
 	@Override
-	public int update(int index, ContactDTO contact) {
+	public int update(int index, ContactVO contact) {
 		System.out.println("log : update()");
 		list[index] = contact;
 		return 1;
