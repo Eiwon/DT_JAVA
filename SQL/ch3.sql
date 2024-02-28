@@ -1,0 +1,92 @@
+
+-- SELECT, INSERT, UPDATE, DELETE
+
+CREATE TABLE EX_MEMBER(
+    ID VARCHAR2(20) PRIMARY KEY,
+    PW VARCHAR2(20),
+    EMAIL VARCHAR2(100)
+);
+
+-- EX_MEMBER 테이블에 데이터 3개 추가
+
+INSERT INTO EX_MEMBER
+VALUES ('admin', 'admin1234', 'admin@test.com');
+
+INSERT INTO EX_MEMBER
+VALUES ('guest', 'guest1234', 'guest@test.com');
+
+INSERT INTO EX_MEMBER (ID, PW)
+VALUES ('test', 'test1234');
+
+-- 전체 데이터 검색
+SELECT * FROM EX_MEMBER;
+
+SELECT ID, PW FROM EX_MEMBER;
+
+-- 특정 컬럼의 데이터를 검색
+-- ID가 'test'인 사람의 모든 데이터 검색
+SELECT * FROM EX_MEMBER
+WHERE ID = 'test';
+
+-- ID가 guest인 사람의 이메일 수정
+UPDATE EX_MEMBER
+SET EMAIL = 'update@test.com'
+WHERE ID = 'guest';
+
+-- ID가 guest인 사람의 데이터 삭제
+DELETE EX_MEMBER
+WHERE ID = 'guest';
+
+
+CREATE TABLE EX_STUDENT(
+    ID NUMBER PRIMARY KEY,
+    NAME VARCHAR2(20) NOT NULL,
+    BIRTHDAY TIMESTAMP DEFAULT SYSDATE,
+    EMAIL VARCHAR2(100)
+); -- TIMESTAMP : 시간 표현이 가능한 날짜 타입
+
+INSERT INTO EX_STUDENT
+VALUES (1, 'Aaa', '1970-01-01', 'aaa@test.com');
+
+INSERT INTO EX_STUDENT (ID, NAME)
+VALUES (2, 'Bbb');
+
+INSERT INTO EX_STUDENT (ID, NAME, EMAIL)
+VALUES (3, 'Abc', 'abc@test.com');
+
+INSERT INTO EX_STUDENT (ID, NAME, BIRTHDAY)
+VALUES (4, 'aaa', '2000-01-01');
+
+SELECT * FROM EX_STUDENT;
+
+SELECT ID, NAME FROM EX_STUDENT
+ORDER BY ID DESC;
+-- ID 기준으로 내림차순
+
+-- BIRTHDAY 기준으로 오름차순 모든 데이터 검색
+SELECT * FROM EX_STUDENT
+ORDER BY BIRTHDAY;
+
+SELECT * FROM EX_STUDENT ORDER BY NAME;
+
+-- NAME의 데이터 중 A로 시작하는 문자열을 갖는 모든 데이터 검색
+SELECT * FROM EX_STUDENT
+WHERE NAME LIKE 'A%';
+
+-- NAME 데이터 중 b를 포함하는 문자열 검색
+SELECT * FROM EX_STUDENT
+WHERE NAME LIKE '%b%';
+
+-- 2000년 1월 1일 이후에 출생한 학생들의 데이터 검색
+SELECT * FROM EX_STUDENT
+WHERE BIRTHDAY >= '2000-01-01';
+
+-- NAME 값이 A로 시작하고, EMAIL 값이 NULL이 아닌 모든 데이터 검색
+SELECT * FROM EX_STUDENT
+WHERE NAME LIKE 'A%' AND EMAIL IS NOT NULL;
+
+-- NAME 값이 A로 시작하거나, B로 시작하는 모든 데이터 검색
+SELECT * FROM EX_STUDENT
+WHERE NAME LIKE 'A%' OR NAME LIKE 'B%';
+
+COMMIT;
