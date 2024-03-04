@@ -14,14 +14,14 @@ import oracle.jdbc.OracleDriver;
 //  - C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib
 //	-> ojdbc6.jar 파일 선택
 // 1. 데이터 저장을 위한 DB 테이블 생성(DB에서)
-// 2 JDBC 드라이버를 메모리에 로드
+// 2 JDBC 드라이버를 메모리에 로드 (DriverManager에 오라클 드라이버 등록)
 // 3. DB와 연동하기 위해 필요한 상수들을 정의
-// 4. DB와 Connection을 맺음
-// 5. Connection 객체를 사용하여 Statement 객체 생성
+// 4. DB와 Connection을 맺음 (DriverManager의 getConnection 함수 실행)
+// 5. Connection 객체를 사용하여 Statement 객체 생성(getConnection의 결과에 createStatement 함수 실행)
 // 6. SQL 문장 생성
-// 7. Statement 객체를 사용하여 SQL 문장을 실행 (DB 서버로 SQL 문장 전송)
+// 7. Statement 객체를 사용하여 SQL 문장을 실행 (DB 서버로 SQL 문장 전송) (stmt.executeUpdate로 sql 전송)
 // 8. DB 서버가 보내준 결과를 확인 / 처리
-
+// DriverManager에서 connection -> createStatement -> executeUpdate
 public class JDBCMain01 {
 	// 3. DB와 연동하기 위해 필요한 상수들을 정의
 	public static final String URL = 
@@ -79,9 +79,6 @@ public class JDBCMain01 {
 			}
 		}
 		
-		
-		
-
 	} // end main
 
 } // end JDBCMain01
