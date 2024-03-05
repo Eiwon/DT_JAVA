@@ -4,14 +4,15 @@ import java.util.*;
 
 public interface ContactDAO {
 
-	public abstract int insert(ContactVO contact);
-	
-	public abstract ArrayList<ContactVO> selectAll();
-	
-	public abstract ContactVO selectByIndex(int index);
-	
-	public abstract int update(int index, ContactVO contact);
-	
-	public abstract int delete(int index);
+	int insert(ContactVO contact);
+
+	ArrayList<ContactVO> selectAll();
+
+	ContactVO selectByIndex(int index);
+
+	int update(int index, ContactVO contact);
+
+	int delete(int index);
+
 
 }

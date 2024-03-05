@@ -57,6 +57,7 @@ public class ContactMain06 {
 		initialize();
 	}
 
+	@SuppressWarnings("serial")
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 952, 823);

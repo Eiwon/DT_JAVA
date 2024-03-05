@@ -1,8 +1,5 @@
 package edu.java.gui11;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -18,7 +15,7 @@ public class MyFrame extends JFrame {
 		// JFrame.DISPOSE_ON_CLOSE : 현재 창만 종료
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 299);
 		contentPane = new JPanel(); // frame.getContentPane()과 같은 역할
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
